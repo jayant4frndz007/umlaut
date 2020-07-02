@@ -1,0 +1,28 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.menu{
+    height: 70px;
+    background-color: rgb(29, 28, 27);
+    width: 100%;
+
+}
+
+.menu ul{
+    display: flex;
+}
+.menu ul li{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+    padding:20px;
+    margin-left: 50px;
+    cursor: pointer;
+    
+}
+li:hover{
+    color:lightblue
+
+}

@@ -1,0 +1,16 @@
+{
+  "logindata": [
+    {
+      "id": 1,
+      "email": "jayant@gmail.com",
+      "pass": "12345",
+      "num": "8709492790"
+    },
+    {
+      "email": "jayantk@gmail.com",
+      "pass": "12345",
+      "num": "9587708952",
+      "id": 2
+    }
+  ]
+}

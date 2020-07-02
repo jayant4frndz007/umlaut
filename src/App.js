@@ -1,26 +1,48 @@
-import React from 'react';
+import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import Signup from './components/signup';
+import Login from './components/login';
+import Success from './components/success';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props){
+  super(props);
+  this.state={
+    toggle:true,
+    newToggle:false
+  }
+  }
+  checkAuth=()=>{
+    console.log('calling');
+    this.setState({newToggle:true})
+  }
+  toggleFunc=(val)=>{
+     if(val == 'login'){
+       this.setState({toggle:true});
+     }else{
+      this.setState({toggle:false});
+     }
+  }
+  render(){
+
+    if(this.state.newToggle){
+     return  <Success/>
+    }else{
+
+    
+    return (
+      <div className="App">
+        
+        <Header val={this.toggleFunc}/>
+        
+        {this.state.toggle && <Login value={this.checkAuth}/>}
+        {!this.state.toggle && <Signup/>}
+      </div>
+    );
+  }
+}
 }
 
 export default App;
